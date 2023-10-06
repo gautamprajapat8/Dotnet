@@ -7,9 +7,11 @@ generateBtn.addEventListener('click', () => {
 
     // Send a request to your backend API to generate Shayari based on the keyword
     fetch(`http://localhost:3000/generate-shayari?keyword=${encodeURIComponent(keyword)}`)
-        .then(response => response.text())
+        .then(response => response.json())
         .then(data => {
-            shayariContainer.textContent = data;
+            const formattedShayari = data.shayari.split('.').map(sentence => sentence.trim()).join('.\n');
+            // Update the shayariContainer with the formatted Shayari
+            shayariContainer.textContent = formattedShayari;
         })
         .catch(error => {
             console.error('Error generating Shayari:', error);
