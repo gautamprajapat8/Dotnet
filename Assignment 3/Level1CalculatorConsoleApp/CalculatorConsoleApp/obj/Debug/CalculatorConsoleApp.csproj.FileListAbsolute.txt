@@ -1,0 +1,14 @@
+D:\MasaiSchoolCourse\Dotnet\Assignment 3\CalculatorConsoleApp\CalculatorConsoleApp\bin\Debug\CalculatorConsoleApp.exe.config
+D:\MasaiSchoolCourse\Dotnet\Assignment 3\CalculatorConsoleApp\CalculatorConsoleApp\bin\Debug\CalculatorConsoleApp.exe
+D:\MasaiSchoolCourse\Dotnet\Assignment 3\CalculatorConsoleApp\CalculatorConsoleApp\bin\Debug\CalculatorConsoleApp.pdb
+D:\MasaiSchoolCourse\Dotnet\Assignment 3\CalculatorConsoleApp\CalculatorConsoleApp\obj\Debug\CalculatorConsoleApp.csproj.AssemblyReference.cache
+D:\MasaiSchoolCourse\Dotnet\Assignment 3\CalculatorConsoleApp\CalculatorConsoleApp\obj\Debug\CalculatorConsoleApp.csproj.CoreCompileInputs.cache
+D:\MasaiSchoolCourse\Dotnet\Assignment 3\CalculatorConsoleApp\CalculatorConsoleApp\obj\Debug\CalculatorConsoleApp.exe
+D:\MasaiSchoolCourse\Dotnet\Assignment 3\CalculatorConsoleApp\CalculatorConsoleApp\obj\Debug\CalculatorConsoleApp.pdb
+D:\MasaiSchoolCourse\Dotnet\Assignment 3\Level 1 CalculatorConsoleApp\CalculatorConsoleApp\bin\Debug\CalculatorConsoleApp.exe.config
+D:\MasaiSchoolCourse\Dotnet\Assignment 3\Level 1 CalculatorConsoleApp\CalculatorConsoleApp\bin\Debug\CalculatorConsoleApp.exe
+D:\MasaiSchoolCourse\Dotnet\Assignment 3\Level 1 CalculatorConsoleApp\CalculatorConsoleApp\bin\Debug\CalculatorConsoleApp.pdb
+D:\MasaiSchoolCourse\Dotnet\Assignment 3\Level 1 CalculatorConsoleApp\CalculatorConsoleApp\obj\Debug\CalculatorConsoleApp.csproj.AssemblyReference.cache
+D:\MasaiSchoolCourse\Dotnet\Assignment 3\Level 1 CalculatorConsoleApp\CalculatorConsoleApp\obj\Debug\CalculatorConsoleApp.csproj.CoreCompileInputs.cache
+D:\MasaiSchoolCourse\Dotnet\Assignment 3\Level 1 CalculatorConsoleApp\CalculatorConsoleApp\obj\Debug\CalculatorConsoleApp.exe
+D:\MasaiSchoolCourse\Dotnet\Assignment 3\Level 1 CalculatorConsoleApp\CalculatorConsoleApp\obj\Debug\CalculatorConsoleApp.pdb
