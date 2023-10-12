@@ -46,6 +46,7 @@ namespace Level2LINQAndCollectionManipulation
             Console.WriteLine("\nAverage Age: " + averageAge);
 
             Console.WriteLine("\nOrdered Students:");
+
             foreach (var student in orderedStudents)
             {
                 Console.WriteLine($"Name: {student.Name}");
