@@ -43,6 +43,7 @@ namespace Level2LINQAndCollectionManipulation
                 Console.WriteLine($"Name: {student.Name}, Grade: {student.Grade}");
             }
 
+
             Console.WriteLine("\nAverage Age: " + averageAge);
 
             Console.WriteLine("\nOrdered Students:");

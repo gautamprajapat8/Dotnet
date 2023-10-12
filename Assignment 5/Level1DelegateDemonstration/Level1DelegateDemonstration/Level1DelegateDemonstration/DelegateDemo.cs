@@ -11,6 +11,7 @@ namespace Level1DelegateDemonstration
 
     internal class DelegateDemo
     {
+
         // Step 2: Method Implementations
         public static int Square(int input)
         {
@@ -20,6 +21,7 @@ namespace Level1DelegateDemonstration
         public static int Cube(int input)
         {
             return input * input * input;
+
         }
     }
 }
