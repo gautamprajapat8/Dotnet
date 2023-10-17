@@ -1,0 +1,51 @@
+.navbar{
+  width: 99vw;
+  height: 100px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background-color: navy;
+  border: 5px solid pink;
+}
+
+.navbar-bbutton{
+  width: 150px;
+  height: 40px;
+  text-align: center;
+  background: azure;
+}
+
+.home-container{
+  width: 99vw;
+  height: 80vh;
+  display: flex;
+  justify-content: center;
+  background-color: black;
+  border: 5px solid white;
+}
+.left-panel{
+  width: 49%;
+  height: 100%;
+  border-right: 5px solid white;
+  position: absolute;
+  left: 0;
+}
+.right-panel{
+  width: 49%;
+  height: 100%;
+ 
+}
+
+.ͼ2 .cm-content {
+  caret-color: white !important;
+  background: #242424 !important;
+  color: white !important;
+}
+.ͼ2 .cm-gutters {
+  background-color: #242424 !important;
+  color: #6c6c6c !important;
+  border-right: 1px solid #ddd !important;
+}
+.ͼ2 .cm-activeLineGutter {
+  background-color: 242424 !important;
+}
