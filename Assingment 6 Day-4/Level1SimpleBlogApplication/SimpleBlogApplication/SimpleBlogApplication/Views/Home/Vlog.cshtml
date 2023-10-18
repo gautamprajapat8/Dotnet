@@ -1,0 +1,22 @@
+﻿@model List<BlogPost>
+
+@{
+    ViewData["Title"] = "Vlog Page";
+}
+
+<div class="vlog-content">
+    <button class="home-button" onclick="location.href='@Url.Action("Index", "Home")'">Home</button>
+    <h2 class="blog-title">Blog Posts</h2>
+    <button class="privacy-button" onclick="location.href='@Url.Action("Privacy", "Home")'">Privacy</button>
+    <ul class="blog-list">
+        @foreach (var post in Model)
+        {
+            <li class="blog-post">
+                <h3 class="post-title">@post.Title</h3>
+                <p>Post ID: @post.Id</p>
+                <p class="post-content">@post.Content</p>
+                <p class="post-author">Author: @post.Author</p>
+            </li>
+        }
+    </ul>
+</div>

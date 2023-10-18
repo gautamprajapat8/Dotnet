@@ -1,0 +1,81 @@
+﻿/* Body and Page Styles */
+.vlog-content body {
+    font-family: Arial, sans-serif;
+    background-color: #f2f2f2;
+    margin: 0;
+    padding: 0;
+}
+
+.vlog-content .container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+}
+
+/* Header Styles */
+.vlog-content h2.blog-title {
+    color: #333;
+}
+
+/* Blog Post Styles */
+.vlog-content ul.blog-list {
+    list-style-type: none;
+    padding: 0;
+}
+
+.vlog-content li.blog-post {
+    background-color: #fff;
+    margin: 10px 0;
+    padding: 20px;
+    border: 1px solid #e0e0e0;
+    border-radius: 5px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+.vlog-content h3.post-title {
+    color: #333;
+    font-size: 24px;
+}
+
+.vlog-content p.post-id {
+    color: #666;
+    margin: 10px 0;
+    font-size: 16px;
+}
+
+.vlog-content p.post-content {
+    color: #666;
+    font-size: 16px;
+}
+
+.vlog-content p.post-author {
+    color: #666;
+    font-size: 16px;
+}
+
+/* Button Styles */
+.vlog-content .home-button,
+.vlog-content .privacy-button {
+    background-color: #258cfb;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    margin: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.vlog-content .home-button {
+    position: absolute;
+    left: 10px;
+    top: 60px;
+}
+
+.vlog-content .privacy-button {
+    position: absolute;
+    right: 10px;
+    top: 60px;
+}
