@@ -1,0 +1,26 @@
+﻿/* Add these styles for the error page */
+.error-page-container {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    text-align: center;
+    margin: 20px;
+}
+
+.error-heading {
+    font-size: 28px;
+    color: #FF5733;
+}
+
+.error-message {
+    font-size: 16px;
+    color: #777;
+}
+
+.error-link {
+    text-decoration: none;
+    color: #007BFF;
+    font-weight: bold;
+}

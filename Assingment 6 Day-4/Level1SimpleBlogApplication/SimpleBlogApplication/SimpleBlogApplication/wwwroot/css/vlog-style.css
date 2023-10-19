@@ -69,13 +69,13 @@
 }
 
 .vlog-content .home-button {
-    position: absolute;
+    position: fixed;
     left: 10px;
     top: 60px;
 }
 
 .vlog-content .privacy-button {
-    position: absolute;
+    position: fixed;
     right: 10px;
     top: 60px;
 }

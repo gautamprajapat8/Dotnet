@@ -1,0 +1,10 @@
+﻿@model Level2AdvancedFriendlyURLs.Models.BlogPost
+
+@{
+    ViewData["Title"] = "Post Not Found";
+}
+
+<div class="error-page-container">
+    <h2 class="error-heading">Oops! Post Not Found</h2>
+    <p class="error-message">The requested blog post could not be found. Please check the URL or return to the <a asp-action="List" asp-controller="Blog" class="error-link">blog homepage</a>.</p>
+</div>

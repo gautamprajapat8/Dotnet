@@ -1,0 +1,13 @@
+﻿@model Level2AdvancedFriendlyURLs.Models.BlogPost
+
+@{
+    ViewData["Title"] = "Blog Post";
+}
+
+<div class="blog-post-container">
+    <h2 class="blog-post-title">@Model.Title</h2>
+    <p class="blog-post-id">Post ID: @Model.Id</p>
+    <p class="blog-post-content">@Model.Content</p>
+    <p class="blog-post-author">Author: @Model.Author</p>
+    <p class="blog-post-slug">Slug: @Model.Slug</p>
+</div>

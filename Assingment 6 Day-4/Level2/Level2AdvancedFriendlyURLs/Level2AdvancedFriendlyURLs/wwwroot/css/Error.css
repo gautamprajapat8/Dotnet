@@ -1,0 +1,34 @@
+﻿.error-container {
+    text-align: center;
+    margin: 20px;
+    padding: 20px;
+    border: 2px solid #e74c3c;
+    background-color: #f2dede;
+    font-family: Arial, sans-serif; /* Add your preferred font stack here */
+}
+
+.error-title {
+    font-size: 36px;
+    color: #e74c3c;
+}
+
+.error-subtitle {
+    font-size: 24px;
+    color: #e74c3c;
+}
+
+.error-code {
+    font-weight: bold;
+    color: #d9534f;
+}
+
+.error-development-info {
+    text-align: left;
+    margin-top: 20px;
+}
+
+.error-message {
+    color: #e74c3c;
+    font-weight: bold;
+    margin-top: 20px;
+}

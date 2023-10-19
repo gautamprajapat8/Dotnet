@@ -1,0 +1,22 @@
+﻿@model List<Level2AdvancedFriendlyURLs.Models.BlogPost>
+
+@{
+    ViewData["Title"] = "All Blog Posts";
+}
+
+<div class="blog-list-container">
+    <h2 id="all-blog-posts-heading">All Blog Posts</h2>
+
+    <ul class="blog-list">
+        @foreach (var post in Model)
+        {
+            <li class="blog-post">
+                <h3 class="blog-title">@post.Title</h3>
+                <pclass ="blog-id">Post Id: @post.Id</pclass>
+                <p class="blog-content">@post.Content</p>
+                <p class="blog-author">Author: @post.Author</p>
+                <p class="blog-slug">Slug: @post.Slug</p>
+            </li>
+        }
+    </ul>
+</div>

@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\buildMultiTargeting\Level2AdvancedFriendlyURLs.props" />
+</Project>
