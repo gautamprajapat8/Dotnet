@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.EntityFrameworkCore;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
@@ -8,23 +9,34 @@ namespace LibraryManagementSystem.Models
     [Table("Book")]
     public class Book
     {
+        // Book properties
         public int Id { get; set; }
-
-        [Required]
         public string Title { get; set; }
-
         public string Author { get; set; }
-
         public int Year { get; set; }
-
-        [Range(1, int.MaxValue, ErrorMessage = "The field NumberInStock must be greater than 0.")]
         public int NumberInStock { get; set; }
 
-        // You can add more properties, such as ISBN, genre, or a foreign key to Patron for tracking book borrowers.
-
-        // If you want to establish a relationship with Patron, you can add a foreign key property like this:
-        // [ForeignKey("Patron")]
-        // public int? PatronId { get; set; }
-        // public Patron Patron { get; set; }
+    
+        // Foreign key to Patron
+        public int? PatronId { get; set; }
+        public Patron Patron { get; set; }
     }
+
+    // DbContext class
+    public class LibraryContext : DbContext
+    {
+        public DbSet<Book> Books { get; set; }
+        public DbSet<Patron> Patrons { get; set; }
+
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            // Define relationships and constraints
+            modelBuilder.Entity<Book>()
+                .HasOne(b => b.Patron)
+                .WithMany(p => p.BorrowedBooks)
+                .HasForeignKey(b => b.PatronId)
+                .OnDelete(DeleteBehavior.SetNull);
+        }
+    }
+
 }

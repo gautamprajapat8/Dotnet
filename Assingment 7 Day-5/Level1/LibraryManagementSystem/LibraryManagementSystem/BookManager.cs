@@ -6,12 +6,15 @@ namespace LibraryManagementSystem
 {
     public class BookManager
     {
-        private LibraryContext _context;
+        private LibraryManagementSystem.DataAccess.LibraryContext _context;
 
-        public BookManager(LibraryContext context)
+
+        public BookManager(LibraryManagementSystem.DataAccess.LibraryContext context)
         {
             _context = context;
         }
+
+
 
         public void CreateNewBook(Book newBook)
         {
@@ -31,7 +34,7 @@ namespace LibraryManagementSystem
                 Console.WriteLine("Books in the Library:");
                 foreach (var book in books)
                 {
-                    Console.WriteLine($"Book Id: {book.Id}, Title: {book.Title}, Author: {book.Author}, Year: {book.Year}");
+                    Console.WriteLine($"Book Id: {book.Id}, Title: {book.Title}, Author: {book.Author}, Year: {book.Year}, Avalable Stock: {book.NumberInStock}");
                     // Display other book properties as needed
                 }
             }
@@ -148,6 +151,88 @@ namespace LibraryManagementSystem
             }
         }
 
+        public void UpdateBookStock(int bookId, int newStock)
+        {
+            var book = _context.Books.Find(bookId);
+
+            if (book != null)
+            {
+                book.NumberInStock += newStock; // Add the new stock value to the previous stock
+                _context.SaveChanges();
+                Console.WriteLine("Book stock updated successfully!");
+            }
+            else
+            {
+                Console.WriteLine("Book not found. Please enter a valid book ID.");
+            }
+        }
+
+        
+        public void BorrowBook(Patron patron, Book book)
+        {
+            if (book.NumberInStock > 0)
+            {
+                // Decrease the stock of the book by one
+                book.NumberInStock--;
+
+                // Add the book to the patron's borrowed books
+                patron.BorrowedBooks.Add(book);
+
+                // Save changes to the database
+                _context.SaveChanges();
+                Console.WriteLine("Book borrowed successfully!");
+            }
+            else
+            {
+                Console.WriteLine("Sorry, the book is not available in stock at this time. Please try again later.");
+            }
+        }
+        
+
+        
+        public void BorrowBook(int patronId, int bookId)
+        {
+            var patron = _context.Patrons.Find(patronId);
+            var book = _context.Books.Find(bookId);
+
+            if (patron != null && book != null && book.NumberInStock > 0)
+            {
+                // Update the book's stock
+                book.NumberInStock--;
+
+                // Associate the book with the patron
+                if (patron.BorrowedBooks == null)
+                {
+                    patron.BorrowedBooks = new List<Book>();
+                }
+                patron.BorrowedBooks.Add(book);
+
+                _context.SaveChanges();
+                Console.WriteLine("Book borrowed successfully!");
+            }
+            else
+            {
+                if (patron == null)
+                {
+                    Console.WriteLine("Patron not found. Please enter a valid patron ID.");
+                }
+                else if (book == null)
+                {
+                    Console.WriteLine("Book not found. Please enter a valid book ID.");
+                }
+                else
+                {
+                    Console.WriteLine("Book not available in stock. Please try again later.");
+                }
+            }
+        }
+
+
+        public Book GetBookById(int bookId)
+        {
+            var book = _context.Books.Find(bookId);
+            return book;
+        }
 
 
     }
