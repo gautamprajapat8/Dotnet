@@ -16,12 +16,12 @@ namespace LibraryManagementSystem
 
 
 
-        public void CreateNewBook(Book newBook)
+        public String CreateNewBook(Book newBook)
         {
             
             _context.Books.Add(newBook);
             _context.SaveChanges();
-            Console.WriteLine("Book added successfully!");
+            return ("Book added successfully!");
         }
 
 
@@ -46,7 +46,7 @@ namespace LibraryManagementSystem
 
 
 
-        public void UpdateBook(int bookId)
+        public String UpdateBook(int bookId)
         {
             var book = _context.Books.Find(bookId);
 
@@ -85,11 +85,11 @@ namespace LibraryManagementSystem
 
                 _context.SaveChanges(); // Save the changes to the database
 
-                Console.WriteLine("Book updated successfully!");
+                return ("Book updated successfully!");
             }
             else
             {
-                Console.WriteLine("Book not found. Please enter a valid book ID.");
+                return ("Book not found. Please enter a valid book ID.");
             }
         }
 
@@ -168,64 +168,10 @@ namespace LibraryManagementSystem
         }
 
         
-        public void BorrowBook(Patron patron, Book book)
-        {
-            if (book.NumberInStock > 0)
-            {
-                // Decrease the stock of the book by one
-                book.NumberInStock--;
-
-                // Add the book to the patron's borrowed books
-                patron.BorrowedBooks.Add(book);
-
-                // Save changes to the database
-                _context.SaveChanges();
-                Console.WriteLine("Book borrowed successfully!");
-            }
-            else
-            {
-                Console.WriteLine("Sorry, the book is not available in stock at this time. Please try again later.");
-            }
-        }
+       
         
 
         
-        public void BorrowBook(int patronId, int bookId)
-        {
-            var patron = _context.Patrons.Find(patronId);
-            var book = _context.Books.Find(bookId);
-
-            if (patron != null && book != null && book.NumberInStock > 0)
-            {
-                // Update the book's stock
-                book.NumberInStock--;
-
-                // Associate the book with the patron
-                if (patron.BorrowedBooks == null)
-                {
-                    patron.BorrowedBooks = new List<Book>();
-                }
-                patron.BorrowedBooks.Add(book);
-
-                _context.SaveChanges();
-                Console.WriteLine("Book borrowed successfully!");
-            }
-            else
-            {
-                if (patron == null)
-                {
-                    Console.WriteLine("Patron not found. Please enter a valid patron ID.");
-                }
-                else if (book == null)
-                {
-                    Console.WriteLine("Book not found. Please enter a valid book ID.");
-                }
-                else
-                {
-                    Console.WriteLine("Book not available in stock. Please try again later.");
-                }
-            }
-        }
 
 
         public Book GetBookById(int bookId)

@@ -21,16 +21,17 @@ namespace LibraryManagementSystem
                     Console.WriteLine("3. Display Book by Id");
                     Console.WriteLine("4. Update Book by Id");
                     Console.WriteLine("5. Delete Book by Id");
-                    Console.WriteLine("6. Add New Patron");
-                    Console.WriteLine("7. Display All Patrons");
-                    Console.WriteLine("8. Display Patron by Id");
-                    Console.WriteLine("9. Update Patron by Id");
-                    Console.WriteLine("10. Delete Patron by Id");
-                    Console.WriteLine("11. Borrow a Book");
-                    Console.WriteLine("12. Update Book Stock");
-                    Console.WriteLine("13. Exit");
+                    Console.WriteLine("6. Update Book Stock");
+                    Console.WriteLine("7. Add New Patron");
+                    Console.WriteLine("8. Display All Patrons");
+                    Console.WriteLine("9. Display Patron by Id");
+                    Console.WriteLine("10. Update Patron by Id");
+                    Console.WriteLine("11. Delete Patron by Id");
+                    
+                    Console.WriteLine("12. Exit");
                     Console.Write("Select an option: ");
 
+                    String msg;
                     if (int.TryParse(Console.ReadLine(), out int option))
                     {
                         switch (option)
@@ -80,7 +81,8 @@ namespace LibraryManagementSystem
                                     Year = year,
                                     NumberInStock = numberInStock
                                 };
-                                bookManager.CreateNewBook(newBook);
+                                msg=bookManager.CreateNewBook(newBook);
+                                Console.WriteLine(msg);
                                 break;
 
                             case 2:
@@ -106,7 +108,8 @@ namespace LibraryManagementSystem
                                 Console.Write("Enter the book ID to update: ");
                                 if (int.TryParse(Console.ReadLine(), out int bookIdToUpdate))
                                 {
-                                    bookManager.UpdateBook(bookIdToUpdate);
+                                    msg=bookManager.UpdateBook(bookIdToUpdate);
+                                    Console.WriteLine(msg);
                                 }
                                 else
                                 {
@@ -128,109 +131,6 @@ namespace LibraryManagementSystem
                                 break;
 
                             case 6:
-                                // Create a new patron
-                                Console.Write("Enter the name of the patron: ");
-                                var patronName = Console.ReadLine();
-                                Console.Write("Enter contact information: ");
-                                var contactInfo = Console.ReadLine();
-                                var newPatron = new Patron
-                                {
-                                    Name = patronName,
-                                    ContactInformation = contactInfo
-                                };
-                                patronManager.CreateNewPatron(newPatron);
-                                Console.WriteLine("Patron added successfully!");
-                                break;
-
-                            case 7:
-                                // Display all patrons
-                                patronManager.DisplayPatrons();
-                                break;
-
-                            case 8:
-                                // Display patron by ID
-                                Console.Write("Enter the patron ID: ");
-                                if (int.TryParse(Console.ReadLine(), out int patronId))
-                                {
-                                    patronManager.DisplayPatronById(patronId);
-                                }
-                                else
-                                {
-                                    Console.WriteLine("Invalid input. Please enter a valid patron ID.");
-                                }
-                                break;
-
-                            case 9:
-                                // Update patron
-                                Console.Write("Enter the patron ID to update: ");
-                                if (int.TryParse(Console.ReadLine(), out int patronIdToUpdate))
-                                {
-                                    patronManager.UpdatePatron(patronIdToUpdate);
-                                }
-                                else
-                                {
-                                    Console.WriteLine("Invalid input. Please enter a valid patron ID.");
-                                }
-                                break;
-
-                            case 10:
-                                // Delete patron
-                                Console.Write("Enter the patron ID to delete: ");
-                                if (int.TryParse(Console.ReadLine(), out int patronIdToDelete))
-                                {
-                                    patronManager.DeletePatron(patronIdToDelete);
-                                }
-                                else
-                                {
-                                    Console.WriteLine("Invalid input. Please enter a valid patron ID.");
-                                }
-                                break;
-
-                            //Borrow a Book
-                            case 11:
-                                int patronId; // Declare patronId here
-                                Console.Write("Enter the patron ID: ");
-                                if (int.TryParse(Console.ReadLine(), out patronId))
-                                {
-                                    var patron = patronManager.GetPatronById(patronId);
-                                    if (patron != null)
-                                    {
-                                        int bookId; // Declare a different variable name (e.g., bookId) here
-                                        Console.Write("Enter the book ID to borrow: ");
-                                        if (int.TryParse(Console.ReadLine(), out bookId))
-                                        {
-                                            var book = bookManager.GetBookById(bookId);
-                                            if (book != null)
-                                            {
-                                                // Attempt to borrow the book
-                                                bookManager.BorrowBook(patron, book);
-                                            }
-                                            else
-                                            {
-                                                Console.WriteLine("Book not found. Please enter a valid book ID.");
-                                            }
-                                        }
-                                        else
-                                        {
-                                            Console.WriteLine("Invalid input. Please enter a valid book ID.");
-                                        }
-                                    }
-                                    else
-                                    {
-                                        Console.WriteLine("Patron not found. Please enter a valid patron ID.");
-                                    }
-                                }
-                                else
-                                {
-                                    Console.WriteLine("Invalid input. Please enter a valid patron ID.");
-                                }
-                                break;
-
-
-
-
-
-                            case 12:
                                 // Update book stock
                                 Console.Write("Enter the book ID to update stock: ");
                                 if (int.TryParse(Console.ReadLine(), out int bookIdToUpdateStock))
@@ -258,8 +158,66 @@ namespace LibraryManagementSystem
                                 }
                                 break;
 
+                            case 7:
+                                // Create a new patron
+                                Console.Write("Enter the name of the patron: ");
+                                var patronName = Console.ReadLine();
+                                Console.Write("Enter contact information: ");
+                                var contactInfo = Console.ReadLine();
+                                var newPatron = new Patron
+                                {
+                                    Name = patronName,
+                                    ContactInformation = contactInfo
+                                };
+                                patronManager.CreateNewPatron(newPatron);
+                                break;
 
-                            case 13:
+                            case 8:
+                                // Display all patrons
+                                patronManager.DisplayPatrons();
+                                break;
+
+                            case 9:
+                                // Display patron by ID
+                                Console.Write("Enter the patron ID: ");
+                                if (int.TryParse(Console.ReadLine(), out int patronId))
+                                {
+                                    patronManager.DisplayPatronById(patronId);
+                                }
+                                else
+                                {
+                                    Console.WriteLine("Invalid input. Please enter a valid patron ID.");
+                                }
+                                break;
+
+                            case 10:
+                                // Update patron
+                                Console.Write("Enter the patron ID to update: ");
+                                if (int.TryParse(Console.ReadLine(), out int patronIdToUpdate))
+                                {
+                                    patronManager.UpdatePatron(patronIdToUpdate);
+                                }
+                                else
+                                {
+                                    Console.WriteLine("Invalid input. Please enter a valid patron ID.");
+                                }
+                                break;
+
+                            case 11:
+                                // Delete patron
+                                Console.Write("Enter the patron ID to delete: ");
+                                if (int.TryParse(Console.ReadLine(), out int patronIdToDelete))
+                                {
+                                    patronManager.DeletePatron(patronIdToDelete);
+                                }
+                                else
+                                {
+                                    Console.WriteLine("Invalid input. Please enter a valid patron ID.");
+                                }
+                                break;
+
+                            
+                            case 12:
                                 // Exit the program
                                 return;
 

@@ -5,7 +5,7 @@
 namespace LibraryManagementSystem.Migrations
 {
     /// <inheritdoc />
-    public partial class UpdateBookRelationship : Migration
+    public partial class InitialCreateNew : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)

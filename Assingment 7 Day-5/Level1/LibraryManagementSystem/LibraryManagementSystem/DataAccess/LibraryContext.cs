@@ -1,6 +1,11 @@
-﻿using LibraryManagementSystem.Models;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
-
+using Pomelo.EntityFrameworkCore.MySql.Infrastructure;
+using LibraryManagementSystem.Models;
 namespace LibraryManagementSystem.DataAccess
 {
     public class LibraryContext : DbContext
@@ -18,14 +23,11 @@ namespace LibraryManagementSystem.DataAccess
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            base.OnModelCreating(modelBuilder);
             modelBuilder.Entity<Book>().ToTable("Book"); // Explicitly specify the table name
             modelBuilder.Entity<Patron>().ToTable("Patron"); // Explicitly specify the table name
 
-            modelBuilder.Entity<Book>()
-                .HasOne(b => b.Patron)
-                .WithMany(p => p.BorrowedBooks)
-                .HasForeignKey(b => b.PatronId)
-                .OnDelete(DeleteBehavior.SetNull);
+            
         }
     }
 }

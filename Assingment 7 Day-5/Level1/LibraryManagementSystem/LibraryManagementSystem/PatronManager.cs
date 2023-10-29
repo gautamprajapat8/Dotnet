@@ -85,10 +85,7 @@ namespace LibraryManagementSystem
         }
 
 
-        public Patron GetPatronById(int patronId)
-        {
-            return _context.Patrons.Find(patronId);
-        }
+        
 
 
         public void DisplayPatronById(int patronId)
@@ -100,18 +97,7 @@ namespace LibraryManagementSystem
                 Console.WriteLine("Patron details:");
                 Console.WriteLine($"Name: {patron.Name}");
                 Console.WriteLine($"Contact Information: {patron.ContactInformation}");
-                Console.WriteLine("Borrowed Books:");
-                if (patron.BorrowedBooks.Count > 0)
-                {
-                    foreach (var book in patron.BorrowedBooks)
-                    {
-                        Console.WriteLine($"  Title: {book.Title}, Author: {book.Author}, Year: {book.Year}");
-                    }
-                }
-                else
-                {
-                    Console.WriteLine("No books borrowed by this patron.");
-                }
+               
             }
             else
             {
