@@ -15,4 +15,6 @@ dotnet ef database update
 
 update="use any message"
 
+
+Note: You have to run some extra command in terminal for EF and MySQL.
 ---------------------------------------------------------
